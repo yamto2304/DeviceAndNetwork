@@ -2,4 +2,6 @@
     <string name="app_name">DeviceAndNetwork</string>
     <string name="text_device_sdk">Device SDK : </string>
     <string name="text_device_brand">Device Brand : </string>
+    <string name="text_network_ip">Ip Address : </string>
+    <string name="text_network_mac">Mac Address : </string>
 </resources>

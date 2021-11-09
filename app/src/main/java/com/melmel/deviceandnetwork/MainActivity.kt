@@ -1,27 +1,49 @@
 package com.melmel.deviceandnetwork
 
+import android.annotation.SuppressLint
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 //import com.melmel.deviceinfo.Device
-import android.widget.TextView
+import com.melmel.deviceandnetwork.databinding.ActivityMainBinding
 import com.melmel.deviceinfo.Device
+import android.net.wifi.WifiManager
+import android.text.format.Formatter
+import com.melmel.deviceinfo.Network
+import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
-    private val version by lazy { Device() }
+    private val device by lazy { Device() }
+    private val network by lazy { Network() }
+    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        initView()
+        initDeviceInfo()
+        initNetworkInfo()
     }
 
-    private fun initView() {
-        val tvSdkNumber = findViewById<TextView>(R.id.tvSdkNumber)
-//        val tvBrandValue = findViewById<TextView>(R.id.tvBrandValue)
-        val sdk: String = version.sdk().toString()
-//        val brand : String = version.brand()
-        tvSdkNumber.text = sdk
-//        tvBrandValue.text = brand
+    @SuppressLint("MissingPermission", "HardwareIds")
+    private fun initNetworkInfo() {
+//        val wifiManager = applicationContext.getSystemService(WIFI_SERVICE) as WifiManager
+//        val ipAddress: String = Formatter.formatIpAddress(wifiManager.connectionInfo.ipAddress)
+        val ipAddress = network.getIpAddress(applicationContext)
+        binding.tvIpValue.text = ipAddress
+
+//        val manager = this.getSystemService(Context.WIFI_SERVICE) as WifiManager
+//        val info = manager.connectionInfo.macAddress.uppercase(Locale.getDefault())
+        val macAddress = network.getMacAddress(applicationContext)
+        binding.tvMacValue.text = macAddress
+    }
+
+    private fun initDeviceInfo() {
+        val sdk: String = device.sdk().toString()
+        val brand : String = device.brand()
+
+        binding.tvSdkNumber.text = sdk
+        binding.tvBrandValue.text = brand
     }
 }
