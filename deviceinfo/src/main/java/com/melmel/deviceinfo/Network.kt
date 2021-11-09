@@ -8,24 +8,22 @@ import androidx.appcompat.app.AppCompatActivity
 import java.util.*
 
 class Network {
+    /**
+     * Return IpAddress
+     */
     fun getIpAddress(context: Context): String {
         val wifiManager = context.getSystemService(AppCompatActivity.WIFI_SERVICE) as WifiManager
         return Formatter.formatIpAddress(wifiManager.connectionInfo.ipAddress)
     }
 
+    /**
+     * Return MAC Address
+     * Not require in real, it just an assignment
+     */
     @SuppressLint("HardwareIds", "MissingPermission")
     fun getMacAddress(context: Context): String {
         val manager = context.getSystemService(Context.WIFI_SERVICE) as WifiManager
         val info = manager.connectionInfo
-//        if (ActivityCompat.checkSelfPermission(
-//                context,
-//                Manifest.permission.ACCESS_FINE_LOCATION
-//            ) != PackageManager.PERMISSION_GRANTED
-//        ) {
-//            Toast.makeText(context, "You need ACCESS_FINE_LOCATION permission", Toast.LENGTH_SHORT)
-//                .show()
-//            return "Need Permission"
-//        }
         return info.macAddress.uppercase(Locale.getDefault())
     }
 }

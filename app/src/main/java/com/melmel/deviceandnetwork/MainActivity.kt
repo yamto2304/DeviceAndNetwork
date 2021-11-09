@@ -1,16 +1,10 @@
 package com.melmel.deviceandnetwork
 
-import android.annotation.SuppressLint
-import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-//import com.melmel.deviceinfo.Device
 import com.melmel.deviceandnetwork.databinding.ActivityMainBinding
 import com.melmel.deviceinfo.Device
-import android.net.wifi.WifiManager
-import android.text.format.Formatter
 import com.melmel.deviceinfo.Network
-import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -26,15 +20,10 @@ class MainActivity : AppCompatActivity() {
         initNetworkInfo()
     }
 
-    @SuppressLint("MissingPermission", "HardwareIds")
     private fun initNetworkInfo() {
-//        val wifiManager = applicationContext.getSystemService(WIFI_SERVICE) as WifiManager
-//        val ipAddress: String = Formatter.formatIpAddress(wifiManager.connectionInfo.ipAddress)
         val ipAddress = network.getIpAddress(applicationContext)
         binding.tvIpValue.text = ipAddress
 
-//        val manager = this.getSystemService(Context.WIFI_SERVICE) as WifiManager
-//        val info = manager.connectionInfo.macAddress.uppercase(Locale.getDefault())
         val macAddress = network.getMacAddress(applicationContext)
         binding.tvMacValue.text = macAddress
     }
