@@ -1,35 +1,100 @@
 package com.melmel.deviceinfo
 
-import android.content.Context
 import android.os.Build
 
 class Device {
-    fun version() : String = Build.VERSION.RELEASE
-    fun sdk() : Int {
-        return Build.VERSION.SDK_INT
-    }
-    fun incremental() : String = Build.VERSION.INCREMENTAL
-    fun board() : String = Build.BOARD
+    /**
+     * Return version of Device
+     */
+    fun version(): String = Build.VERSION.RELEASE
 
+    /**
+     * Return sdk number of Device
+     */
+    fun sdk(): Int = Build.VERSION.SDK_INT
 
-//    +"\nBOARD : "+Build.BOARD
-//    +"\nBOOTLOADER : "+Build.BOOTLOADER
-//    +"\nBRAND : "+Build.BRAND
-//    +"\nCPU_ABI : "+Build.CPU_ABI
-//    +"\nCPU_ABI2 : "+Build.CPU_ABI2
-//    +"\nDISPLAY : "+Build.DISPLAY
-//    +"\nFINGERPRINT : "+Build.FINGERPRINT
-//    +"\nHARDWARE : "+Build.HARDWARE
-//    +"\nHOST : "+Build.HOST
-//    +"\nID : "+Build.ID
-//    +"\nMANUFACTURER : "+Build.MANUFACTURER
-//    +"\nMODEL : "+Build.MODEL
-//    +"\nPRODUCT : "+Build.PRODUCT
-//    +"\nSERIAL : "+Build.SERIAL
-//    +"\nTAGS : "+Build.TAGS
-//    +"\nTIME : "+Build.TIME
-//    +"\nTYPE : "+Build.TYPE
-//    +"\nUNKNOWN : "+Build.UNKNOWN
-//    +"\nUSER : "+Build.USER;
+    /**
+     * Return incremental  of Device
+     */
+    fun incremental(): String = Build.VERSION.INCREMENTAL
 
+    /**
+     * Return board  of Device
+     */
+    fun board(): String = Build.BOARD
+
+    /**
+     * Return bootLoader  of Device
+     */
+    fun bootLoader(): String = Build.BOOTLOADER
+
+    /**
+     * Return brand  of Device
+     */
+    fun brand(): String = Build.BRAND
+
+    /**
+     * Return display  of Device
+     */
+    fun display(): String = Build.DISPLAY
+
+    /**
+     * Return fingerPrint  of Device
+     */
+    fun fingerPrint(): String = Build.FINGERPRINT
+
+    /**
+     * Return hardware  of Device
+     */
+    fun hardware(): String = Build.HARDWARE
+
+    /**
+     * Return host  of Device
+     */
+    fun host(): String = Build.HOST
+
+    /**
+     * Return id  of Device
+     */
+    fun id(): String = Build.ID
+
+    /**
+     * Return manufacturer  of Device
+     */
+    fun manufacturer(): String = Build.MANUFACTURER
+
+    /**
+     * Return model  of Device
+     */
+    fun model(): String = Build.MODEL
+
+    /**
+     * Return product  of Device
+     */
+    fun product(): String = Build.PRODUCT
+
+    /**
+     * Return tags  of Device
+     */
+    fun tags(): String = Build.TAGS
+
+    /**
+     * Return time  of Device
+     */
+    fun time(): Long = Build.TIME
+
+    /**
+     * Return type  of Device
+     */
+    fun type(): String = Build.TYPE
+
+    /**
+     * Return unknown  of Device
+     */
+    fun unknown(): String = Build.UNKNOWN
+
+    /**
+     * Return user  of Device
+     */
+    fun user(): String = Build.USER
 }
