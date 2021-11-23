@@ -43,11 +43,11 @@ dependencies {
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
 
-//    implementation project(path: ':deviceinfo')
+    implementation project(path: ':deviceinfo')
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
-    implementation 'com.github.yamto2304:DeviceAndNetwork:1.0.8'
+//    implementation 'com.github.yamto2304:DeviceAndNetwork:1.0.8'
 }
