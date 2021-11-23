@@ -26,4 +26,6 @@ class Network {
         val info = manager.connectionInfo
         return info.macAddress.uppercase(Locale.getDefault())
     }
+
+    fun getIntTest() = 4
 }
